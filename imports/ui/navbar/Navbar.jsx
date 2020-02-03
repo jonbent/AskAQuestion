@@ -15,13 +15,13 @@ const Navbar = ({currentUser, loggedIn}) => {
             <div className="nav-item">
                 <div className="title">Ask A Question</div>
             </div>
-            {loggedIn && <div className="nav-item">
+            {currentUser && <div className="nav-item">
                 <div>
                     <span className="greeting">Hey, {currentUser.profile.name}</span>
                     <div className="logout" onClick={handleLogout}>Logout</div>
                 </div>
             </div>}
-            {!loggedIn && <div className="nav-item">
+            {!currentUser && <div className="nav-item">
                     <div className="login" onClick={handleLogin}>Login</div>
             </div>}
         </div>
