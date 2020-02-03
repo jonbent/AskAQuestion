@@ -2,13 +2,15 @@ import {QuestionsCollection} from "../api/questions";
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 
-const receiveQuestions = (questions) => ({
+const receiveQuestions = (payload) => ({
     type: RECEIVE_QUESTIONS,
-    questions
+    payload
 });
 
 export const fetchQuestions = () => dispatch => {
     Tracker.autorun(() => {
-        dispatch(receiveQuestions(QuestionsCollection.find({resolved: false}, {sort: {date_created: -1}}).fetch()))
+        const questions = QuestionsCollection.find({resolved: false}, {sort: {date_created: -1}}).fetch();
+        const questionUserIds = questions.map(q => q.userId);
+        dispatch(receiveQuestions({questions, users: Meteor.users.find({_id: {$in: questionUserIds}}).fetch()}))
     })
 }
