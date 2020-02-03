@@ -16,7 +16,7 @@ const QueueItem = ({user, question, idx}) => {
                 {idx + 1}
             </div>
             <div>
-                {user.profile.name}
+                {user.profile.name ? user.profile.name : user.services.github.username}
             </div>
             <div>
                 {ReadableTimeUtil(question.created)}

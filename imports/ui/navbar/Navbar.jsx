@@ -17,7 +17,7 @@ const Navbar = ({currentUser, loggedIn}) => {
             </div>
             {currentUser && <div className="nav-item">
                 <div>
-                    <span className="greeting">Hey, {currentUser.profile.name}</span>
+                    <span className="greeting">Hey, {currentUser.profile.name ? currentUser.profile.name : currentUser.services.github.username}</span>
                     <div className="logout" onClick={handleLogout}>Logout</div>
                 </div>
             </div>}
