@@ -1,0 +1,39 @@
+.queue-item{
+  padding: 1rem;
+  margin: 0rem 3rem;
+  background-color: #615D6C;
+  color: #7CEA9C;
+  border-radius: 10px;
+  border: 1px solid #7CEA9C;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 2px 3px 5px black;
+  div:not(:nth-of-type(1)){
+    border-left: 2px solid #7CEA9C;
+  }
+  div:not(:last-of-type){
+    padding: 0.5rem;
+    font-size: 110%;
+  }
+  div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button{
+      color: #615D6C;
+      background-color: #7CEA9C;
+      padding: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      //font-size: 110%;
+      border: none;
+      font: 400 14.6px 'Varela Round', sans-serif;
+    }
+  }
+}
+.queue-item:not(:nth-of-type(1)){
+  margin-top: 1.5rem;
+}
