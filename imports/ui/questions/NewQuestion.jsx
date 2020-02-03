@@ -9,7 +9,7 @@ const NewQuestion = ({user, question}) => {
     const addQuestion = (e) => {
         if (!question){
             createQuestion(user._id);
-            Meteor.call('sendTextForQuestion', user.profile.name)
+            Meteor.call('sendTextForQuestion', user.profile.name ? user.profile.name : user.services.github.username)
         } else {
             alert('You already have a question in!');
         }
