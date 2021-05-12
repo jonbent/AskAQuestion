@@ -18,7 +18,7 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "simpl-schema": "^1.5.6",
+    "simpl-schema": "^1.10.2",
     "twilio": "^3.39.3"
   },
   "meteor": {
